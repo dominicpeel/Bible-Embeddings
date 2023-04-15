@@ -2,6 +2,8 @@
 
 This project aims to visualize Bible chapters in a 3D space by embedding their textual content using OpenAI's text-embedding-ada-002 model, then applying t-SNE for dimensionality reduction.
 
+[Live web demo](https://peely.org/bible)
+
 ## Getting Started
 
 ### Installing
