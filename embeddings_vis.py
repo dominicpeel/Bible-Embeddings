@@ -5,8 +5,7 @@ import ast
 import plotly.graph_objs as go
 import plotly.express as px
 
-df = pd.read_csv('data/embeddings.csv')
-# book,chapter,verses,content,embedding
+df = pd.read_csv('data/embeddings.csv') # book,chapter,verses,content,embedding
 
 books = df['book'].unique()
 embeddings = np.array(df['embedding'].apply(ast.literal_eval).tolist())
@@ -15,7 +14,6 @@ embeddings = np.array(df['embedding'].apply(ast.literal_eval).tolist())
 tsne = TSNE(n_components=3)
 red_dims = tsne.fit_transform(embeddings)
 
-# Assuming 'vis_dims_3d' is the result of t-SNE in 3D, and 'chapters' is the dictionary with chapter information
 x_3d = [x for x, y, z in red_dims]
 y_3d = [y for x, y, z in red_dims]
 z_3d = [z for x, y, z in red_dims]

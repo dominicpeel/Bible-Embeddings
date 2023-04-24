@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.manifold import TSNE
+from sklearn import svm
 from sklearn.metrics.pairwise import cosine_similarity
 import ast
 
