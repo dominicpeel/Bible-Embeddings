@@ -14,9 +14,7 @@ embeddings = np.array(df['embedding'].apply(ast.literal_eval).tolist())
 tsne = TSNE(n_components=3)
 red_dims = tsne.fit_transform(embeddings)
 
-x_3d = [x for x, y, z in red_dims]
-y_3d = [y for x, y, z in red_dims]
-z_3d = [z for x, y, z in red_dims]
+x_3d, y_3d, z_3d = zip(*red_dims)
 
 # Create a color scale based on the book index
 book_indices = {book: idx for idx, book in enumerate(books)}
